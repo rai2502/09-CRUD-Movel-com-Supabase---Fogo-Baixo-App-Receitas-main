@@ -1,6 +1,14 @@
 # Fogo Baixo — receitas com Capacitor e Supabase
 
-Aplicativo web React/Vite empacotado com Capacitor. O `index.html` também inclui a experiência do caderno de receitas e o botão de captura de fotos.
+O Fogo Baixo é um caderno digital de receitas feito com React, Vite e Capacitor. Ele combina receitas culinárias com recursos nativos para acompanhar o preparo: captura e envio de fotos ao Supabase Storage e lembretes locais que avisam quando é hora de voltar à cozinha.
+
+### O que o app oferece
+
+- Catálogo de receitas e cadastro conectado ao Supabase Database.
+- Captura de foto pela câmera/galeria do Android e envio ao bucket público `fotos-camera`.
+- Notificação imediata e lembretes locais programados para 5, 10 ou 15 segundos.
+- Consulta e solicitação de permissão de notificações, com controle de alarmes exatos no Android.
+- Cancelamento dos lembretes pendentes criados pelo app.
 
 ## APK Android
 
@@ -62,6 +70,25 @@ npx cap open android
 ```
 
 Confira o bucket `fotos-camera` no painel e a imagem exibida na seção da câmera. É preciso configurar o bucket e as policies no seu próprio projeto Supabase antes do upload.
+
+## Notificações locais
+
+O app usa `@capacitor/local-notifications`. A seção **Lembretes do Fogo Baixo** permite consultar e solicitar a permissão, disparar um aviso imediato e programar um lembrete. O desafio extra implementado permite cancelar os lembretes pendentes do app.
+
+No Android 13 ou superior, autorize as notificações quando o sistema solicitar. Para o agendamento preciso em Android 12 ou superior, permita também **Alarmes e lembretes** nas configurações do app. O navegador mostra a interface, mas a API de notificações locais deve ser validada no app instalado em um dispositivo Android.
+
+Depois de instalar ou atualizar um plugin nativo:
+
+```bash
+npm run build
+npx cap sync android
+```
+
+Abra o projeto Android Studio e instale/execute no celular. Para testar, toque em **Permitir notificações**, depois em **Avisar agora**; em seguida escolha 5, 10 ou 15 segundos e toque em **Agendar lembrete**. Minimize o app para conferir o aviso na tela do aparelho. O botão **Cancelar lembretes pendentes** remove apenas os agendamentos criados pelo Fogo Baixo.
+
+## Evidências da atividade
+
+Para concluir a entrega, grave a tela do celular mostrando a permissão, o aviso imediato e um lembrete agendado. Adicione a captura e o GIF/vídeo ao repositório, por exemplo em `docs/evidencias/`, e insira os links nesta seção. As evidências precisam ser capturadas no dispositivo real; o navegador de desenvolvimento não substitui essa gravação.
 
 ## Estrutura de dados
 

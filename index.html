@@ -137,6 +137,13 @@
     </div>
   </section>
 
+  <!-- ===== NOTIFICAÇÕES LOCAIS ===== -->
+  <section id="lembretes" class="bg-parchment text-charcoal">
+    <div class="max-w-6xl mx-auto px-5 py-10">
+      <div id="notifications-root"></div>
+    </div>
+  </section>
+
   <!-- ===== MODAL DE RECEITA ===== -->
   <div id="modalBackdrop" class="modal-backdrop hidden">
     <div id="modalCard" class="modal-card" role="dialog" aria-modal="true">
@@ -151,5 +158,6 @@
   <!-- type="module" é obrigatório aqui: é o que permite usar import/export
        (ES Modules) dentro do script.js, inclusive o import do supabaseClient.js -->
   <script type="module" src="./frontend/js/script.js"></script>
+  <script type="module" src="./frontend/js/notifications-main.jsx"></script>
 </body>
 </html>

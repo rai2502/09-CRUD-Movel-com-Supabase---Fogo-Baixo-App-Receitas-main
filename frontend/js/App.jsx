@@ -12,6 +12,7 @@ import RecipesGrid from './components/RecipesGrid.jsx';
 import RecipeForm from './components/RecipeForm.jsx';
 import RecipeDetail from './components/RecipeDetail.jsx';
 import ErrorNotification from './components/ErrorNotification.jsx';
+import LocalNotificationsPanel from './components/LocalNotificationsPanel.jsx';
 
 function App() {
   const { receitas, carregando, erro, criarReceita, atualizarReceita, deletarReceita } = useRecipesCRUD();
@@ -140,6 +141,10 @@ function App() {
           />
         )}
       </main>
+
+      <section className="max-w-6xl mx-auto px-5 pb-10" aria-label="Lembretes da cozinha">
+        <LocalNotificationsPanel />
+      </section>
     </div>
   );
 }
