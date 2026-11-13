@@ -88,7 +88,7 @@ Abra o projeto Android Studio e instale/execute no celular. Para testar, toque e
 
 ## Evidências da atividade
 
-Para concluir a entrega, grave a tela do celular mostrando a permissão, o aviso imediato e um lembrete agendado. Adicione a captura e o GIF/vídeo ao repositório, por exemplo em `docs/evidencias/`, e insira os links nesta seção. As evidências precisam ser capturadas no dispositivo real; o navegador de desenvolvimento não substitui essa gravação.
+**Gravação da tela do celular:** [Assistir ao vídeo da atividade](docs/evidencias/notificacoes-fogo-baixo.mp4).
 
 ## Estrutura de dados
 
